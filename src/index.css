@@ -16,16 +16,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 201 100% 37%; /* Brand blue */
+    --primary: 214 60% 21%; /* Dark blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 187 100% 37%; /* Teal */
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 347 65% 33%; /* Maroon */
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 187 100% 37%;
+    --accent: 201 58% 38%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 201 100% 37%;
+    --ring: 214 60% 21%;
 
     --radius: 0.5rem;
   }
@@ -53,7 +53,7 @@
   }
   
   .btn-secondary {
-    @apply bg-brand-teal text-white hover:bg-brand-blue transition-colors duration-300 px-6 py-3 rounded-md font-medium;
+    @apply bg-brand-maroon text-white hover:bg-brand-blue transition-colors duration-300 px-6 py-3 rounded-md font-medium;
   }
 
   .section-title {
@@ -103,6 +103,51 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(3, 22, 53, 0.7), rgba(15, 76, 129, 0.7));
+  background: linear-gradient(rgba(10, 29, 48, 0.8), rgba(139, 30, 50, 0.7));
   z-index: -1;
+}
+
+.diagonal-border {
+  position: relative;
+}
+
+.diagonal-border::before,
+.diagonal-border::after {
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 12px;
+  background-color: #0F375A;
+  z-index: 1;
+}
+
+.diagonal-border::before {
+  top: 0;
+  left: 0;
+  transform: skewY(-5deg);
+  transform-origin: top left;
+}
+
+.diagonal-border::after {
+  bottom: 0;
+  right: 0;
+  transform: skewY(-5deg);
+  transform-origin: bottom right;
+}
+
+.diagonal-border-bottom {
+  position: relative;
+}
+
+.diagonal-border-bottom::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 12px;
+  background-color: #8B1E32;
+  bottom: 0;
+  left: 0;
+  transform: skewY(-1deg);
+  transform-origin: bottom left;
+  z-index: 1;
 }

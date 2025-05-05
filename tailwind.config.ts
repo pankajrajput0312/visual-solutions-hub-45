@@ -67,12 +67,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Business-specific colors
-				'brand-blue': '#0F4C81', // Deep blue
-				'brand-teal': '#00A4BD', // Teal accent
-				'brand-navy': '#031635', // Navy
+				// Updated colors from business card
+				'brand-blue': '#0F375A', // Dark blue from card
+				'brand-maroon': '#8B1E32', // Maroon/burgundy from card
+				'brand-navy': '#0A1D30', // Darker navy
 				'brand-light': '#F5F7FA', // Light background
 				'brand-gray': '#4A5568', // Text gray
+				'brand-teal': '#2B7698', // Teal accent from logo
+				'brand-orange': '#FF8A00', // Orange from #startupindia logo
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
