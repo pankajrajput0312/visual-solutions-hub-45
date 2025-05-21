@@ -55,6 +55,15 @@
   .btn-secondary {
     @apply bg-brand-maroon text-white hover:bg-brand-blue transition-colors duration-300 px-6 py-3 rounded-md font-medium;
   }
+  
+  /* Premium buttons with shadow and subtle hover effect */
+  .premium-btn-primary {
+    @apply bg-brand-blue text-white hover:bg-brand-navy transition-all duration-300 px-7 py-3.5 rounded-md font-medium shadow-lg hover:shadow-xl hover:translate-y-[-2px];
+  }
+  
+  .premium-btn-secondary {
+    @apply bg-brand-maroon text-white hover:bg-opacity-90 transition-all duration-300 px-7 py-3.5 rounded-md font-medium shadow-lg hover:shadow-xl hover:translate-y-[-2px];
+  }
 
   .section-title {
     @apply text-3xl md:text-4xl font-bold text-brand-navy mb-4;
@@ -97,6 +106,18 @@
   z-index: -1;
 }
 
+/* Premium overlay with improved gradient for better text visibility */
+.premium-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 29, 48, 0.85) 0%, rgba(139, 30, 50, 0.8) 100%);
+  z-index: -1;
+}
+
+/* Original overlay preserved for other components */
 .overlay {
   position: absolute;
   top: 0;
@@ -151,3 +172,18 @@
   transform-origin: bottom left;
   z-index: 1;
 }
+
+/* Premium animations */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: subtle-float 3s ease-in-out infinite;
+}
+
