@@ -65,7 +65,7 @@ const ServicesSection: React.FC = () => {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <section id="services" className="py-16 bg-white">
+    <section id="services" className="py-16 bg-brand-light">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title text-center">Our Services</h2>
         <p className="text-lg text-center text-brand-gray mb-8 max-w-3xl mx-auto">
@@ -81,7 +81,7 @@ const ServicesSection: React.FC = () => {
               className={`px-4 py-2 rounded-md capitalize transition-colors ${
                 activeCategory === category 
                   ? 'bg-brand-teal text-white' 
-                  : 'bg-brand-light text-brand-gray hover:bg-brand-blue hover:text-white'
+                  : 'bg-white text-brand-gray hover:bg-brand-blue hover:text-white'
               }`}
             >
               {category}
@@ -89,10 +89,10 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
         
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredServices.map(service => (
-            <ServiceCard key={service.id} service={service} />
+        {/* Services List - now as vertical columns */}
+        <div className="flex flex-col gap-6">
+          {filteredServices.map((service, index) => (
+            <ServiceCard key={service.id} service={service} isEven={index % 2 === 1} />
           ))}
         </div>
       </div>
