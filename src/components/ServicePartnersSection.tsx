@@ -1,29 +1,24 @@
-
 import React from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { InfoIcon } from 'lucide-react';
 
-interface Partner {
-  name: string;
-  needsVerification?: boolean;
-}
-
-const partners: Partner[] = [
-  { name: "AHULIA" },
-  { name: "Honeywell" },
-  { name: "SONY" },
-  { name: "HP" },
-  { name: "SAMSUNG" },
-  { name: "PeopleLink" },
-  { name: "Canon" },
-  { name: "Interio" },
-  { name: "VOLTAS" },
-  { name: "eSSL" },
-  { name: "Security at Fingertips" },
-  { name: "RIGOH" },
-  { name: "Microsoft" },
-  { name: "o<omo>", needsVerification: true },
-  { name: "foton", needsVerification: true },
+const partnerLogos = [
+  'essl.png',
+  'hp.png',
+  'PeopleLink.webp',
+  'Samsung_Logo.svg',
+  'AHUJA.png',
+  'godrej_interio.png',
+  'Geeken.jpg',
+  'HoneyWell.png',
+  'Sony.png',
+  'Ricoh.png',
+  'Okomo360.jpeg',
+  'FotonVR.avif',
+  'Microsoft.jpeg',
+  'Edutech.png',
+  'Voltas.avif',
+  'Canon.png',
 ];
 
 const ServicePartnersSection: React.FC = () => {
@@ -47,41 +42,17 @@ const ServicePartnersSection: React.FC = () => {
           Working with industry leaders to deliver exceptional solutions
         </p>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {partners.map((partner, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg animate-fade-in border border-gray-100 aspect-square"
-              style={{ animationDelay: `${index * 0.05}s` }}
-            >
-              <div className="text-center">
-                <h3 className="font-heading font-semibold text-brand-navy">
-                  {partner.name}
-                  {partner.needsVerification && (
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <sup><InfoIcon className="inline h-3 w-3 text-brand-gray ml-1" /></sup>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p className="text-xs">Name requires verification</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  )}
-                </h3>
-              </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center justify-center">
+          {partnerLogos.map((logo, idx) => (
+            <div key={logo} className="flex items-center justify-center bg-white rounded-lg shadow p-4 h-32">
+              <img
+                src={`/partners/${logo}`}
+                alt={logo.replace(/[-_]/g, ' ').replace(/\..+$/, '')}
+                className="max-h-20 max-w-full object-contain"
+                loading="lazy"
+              />
             </div>
           ))}
-          <div 
-            className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg animate-fade-in border border-gray-100 aspect-square"
-            style={{ animationDelay: `${partners.length * 0.05}s` }}
-          >
-            <div className="text-center">
-              <h3 className="font-heading font-semibold text-brand-navy">Many More</h3>
-              <p className="text-sm text-brand-gray">(Collaborations Ongoing...)</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

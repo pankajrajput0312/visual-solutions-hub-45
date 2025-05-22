@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Mail, Phone, ArrowRight } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Globe, Instagram } from 'lucide-react';
 import { useToast } from "../hooks/use-toast";
 
 const ContactSection: React.FC = () => {
@@ -57,24 +56,50 @@ const ContactSection: React.FC = () => {
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <Mail className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
-                <div>
-                  <h3 className="font-medium text-xl">Email Us</h3>
-                  <a href="mailto:info@visualsolutionshub.com" className="text-white/90 hover:text-white hover:underline transition-colors">
-                    info@visualsolutionshub.com
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
                 <Phone className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-xl">Call Us</h3>
-                  <a href="tel:+919876543210" className="text-white/90 hover:text-white hover:underline transition-colors">
-                    +91 9876 543 210
+                  <h3 className="font-medium text-xl">Phone</h3>
+                  <a href="tel:+919910467633" className="text-white/90 hover:text-white hover:underline transition-colors">
+                    +91 99104 67633
+                  </a>
+                  <span className="mx-2">||</span>
+                  <a href="tel:+917627050482" className="text-white/90 hover:text-white hover:underline transition-colors">
+                    +91 76270 50482
                   </a>
                 </div>
               </div>
+              <div className="flex items-start">
+                <Mail className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <div>
+                  <h3 className="font-medium text-xl">Email</h3>
+                  <a href="mailto:virgirdtpl@gmail.com" className="text-white/90 hover:text-white hover:underline transition-colors">
+                    virgirdtpl@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <Globe className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <div>
+                  <h3 className="font-medium text-xl">Website</h3>
+                  <a href="https://www.virgir.in" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white hover:underline transition-colors">
+                    www.virgir.in
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <Instagram className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <div>
+                  <h3 className="font-medium text-xl">Social Media</h3>
+                  <span className="text-white/90">@virgir</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center lg:justify-start mt-8">
+              <img
+                src="/Contact-us.png"
+                alt="Virgir Social QR Code"
+                className="bg-white p-2 rounded-lg shadow max-w-[160px] w-full h-auto"
+              />
             </div>
           </div>
           

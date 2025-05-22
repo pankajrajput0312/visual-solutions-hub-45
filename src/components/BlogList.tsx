@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import BlogCard from './BlogCard';
 
@@ -12,7 +11,7 @@ export type BlogPost = {
   category: string;
 };
 
-const blogPosts: BlogPost[] = [
+export const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: "The Future of Video Conferencing Technologies",

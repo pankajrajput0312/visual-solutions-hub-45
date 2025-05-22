@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -38,11 +37,11 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="nav-link font-medium">Home</Link>
-            <Link to="/#products" className="nav-link font-medium">Products</Link>
-            <Link to="/#services" className="nav-link font-medium">Services</Link>
+            <a href="#" className="nav-link font-medium">Home</a>
+            <a href="#products" className="nav-link font-medium">Products</a>
+            <a href="#services" className="nav-link font-medium">Services</a>
             <Link to="/blog" className="nav-link font-medium">Blog</Link>
-            <Link to="/#contact" className="btn-primary">Contact Us</Link>
+            <a href="#contact" className="btn-primary">Contact Us</a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -64,21 +63,21 @@ const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <nav className="flex flex-col py-2">
-            <Link to="/" className="nav-link-mobile" onClick={toggleMobileMenu}>
+            <a href="#" className="nav-link-mobile" onClick={toggleMobileMenu}>
               Home
-            </Link>
-            <Link to="/#products" className="nav-link-mobile" onClick={toggleMobileMenu}>
+            </a>
+            <a href="#products" className="nav-link-mobile" onClick={toggleMobileMenu}>
               Products
-            </Link>
-            <Link to="/#services" className="nav-link-mobile" onClick={toggleMobileMenu}>
+            </a>
+            <a href="#services" className="nav-link-mobile" onClick={toggleMobileMenu}>
               Services
-            </Link>
+            </a>
             <Link to="/blog" className="nav-link-mobile" onClick={toggleMobileMenu}>
               Blog
             </Link>
-            <Link to="/#contact" className="nav-link-mobile font-medium text-brand-maroon" onClick={toggleMobileMenu}>
+            <a href="#contact" className="nav-link-mobile font-medium text-brand-maroon" onClick={toggleMobileMenu}>
               Contact Us
-            </Link>
+            </a>
           </nav>
         </div>
       )}

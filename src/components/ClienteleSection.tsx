@@ -1,34 +1,13 @@
-
 import React from 'react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { InfoIcon } from 'lucide-react';
 
-interface Client {
-  name: string;
-  logo?: string;
-}
-
-const clients: Client[] = [
-  { 
-    name: "Ministry of Women and Child Development",
-    logo: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=400&auto=format&fit=crop"
-  },
-  { 
-    name: "INDIAN BIMBO",
-    logo: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?q=80&w=400&auto=format&fit=crop"
-  },
-  { 
-    name: "NUMISHING A BETTER WORLD",
-    logo: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=400&auto=format&fit=crop"
-  },
-  { 
-    name: "Hindustan Aeronautics Limited",
-    logo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400&auto=format&fit=crop"
-  },
-  { 
-    name: "Celestial groovencxus",
-    logo: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop"
-  },
+const clientLogos = [
+  'BIMBO.jpg',
+  'ministry-of-women-and-child-development.png',
+  'HAL.webp',
+  'Indianarmy.webp',
+  'Groovenexus.jpg',
 ];
 
 const ClienteleSection: React.FC = () => {
@@ -52,34 +31,17 @@ const ClienteleSection: React.FC = () => {
           Trusted by leading organizations across various sectors
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {clients.map((client, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={client.logo} 
-                  alt={client.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="font-heading font-semibold text-brand-navy">{client.name}</h3>
-              </div>
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-8 items-center justify-center">
+          {clientLogos.map((logo, idx) => (
+            <div key={logo} className="flex items-center justify-center bg-white rounded-lg shadow p-2 xs:p-4 h-36 xs:h-48">
+              <img
+                src={`/client/${logo}`}
+                alt={logo.replace(/[-_]/g, ' ').replace(/\..+$/, '')}
+                className="max-h-24 xs:max-h-40 max-w-full object-contain"
+                loading="lazy"
+              />
             </div>
           ))}
-          <div 
-            className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in flex items-center justify-center p-8"
-            style={{ animationDelay: `${clients.length * 0.1}s` }}
-          >
-            <div className="text-center">
-              <h3 className="font-heading font-semibold text-xl text-brand-navy mb-2">Many More</h3>
-              <p className="text-brand-gray">(Ongoing...)</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
