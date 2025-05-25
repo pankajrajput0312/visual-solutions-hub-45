@@ -1,15 +1,14 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Globe, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Globe, MessageCircle } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-brand-navy dark:bg-dark-bg text-white dark:text-dark-text diagonal-border-bottom transition-colors duration-300">
+    <footer className="bg-brand-navy dark:bg-dark-bg text-white dark:text-dark-text transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center mb-4">
               <div className="h-10 w-10">
                 <svg viewBox="0 0 100 100" className="h-full w-full">
@@ -27,7 +26,7 @@ const Footer: React.FC = () => {
                 </span>
               </div>
             </div>
-            <p className="text-gray-300 dark:text-dark-text-secondary mb-4 transition-colors duration-300">
+            <p className="text-gray-300 dark:text-dark-text-secondary text-center md:text-left mb-4 transition-colors duration-300">
               Video Conferencing and IT Service Providers
             </p>
             <div className="flex space-x-4">
@@ -46,53 +45,38 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin size={20} className="mr-2 text-brand-maroon dark:text-dark-accent flex-shrink-0 mt-1 transition-colors duration-300" />
-                <span className="text-gray-300 dark:text-dark-text-secondary transition-colors duration-300">F-204, SG Grand, Raj Nagar Ex, Ghaziabad - 201003</span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={20} className="mr-2 text-brand-maroon dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
-                <span className="text-gray-300 dark:text-dark-text-secondary transition-colors duration-300">+91 99104 67633</span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={20} className="mr-2 text-brand-maroon dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
-                <span className="text-gray-300 dark:text-dark-text-secondary transition-colors duration-300">+91 76270 50482</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={20} className="mr-2 text-brand-maroon dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
-                <span className="text-gray-300 dark:text-dark-text-secondary transition-colors duration-300">virgirctpl@gmail.com</span>
-              </li>
-              <li className="flex items-center">
-                <Globe size={20} className="mr-2 text-brand-maroon dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
-                <a href="http://www.virgir.in" target="_blank" rel="noopener noreferrer" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">www.virgir.in</a>
-              </li>
+          {/* Quick Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-center md:text-left">
+              <li><a href="#" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">Home</a></li>
+              <li><a href="#services" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">Services</a></li>
+              <li><Link to="/blog" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">Blog</Link></li>
+              <li><a href="#contact" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Services</h3>
-            <ul className="space-y-2">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xl font-bold mb-4">Our Services</h3>
+            <ul className="space-y-2 text-center md:text-left">
               <li><a href="#services" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">IT Infrastructure</a></li>
               <li><a href="#services" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">Security Systems</a></li>
               <li><a href="#services" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">AMC Services</a></li>
               <li><a href="#services" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">Software Licensing</a></li>
-              <li><a href="#services" className="text-gray-300 dark:text-dark-text-secondary hover:text-brand-maroon dark:hover:text-dark-accent transition-colors duration-300">GeM Services</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-700 dark:border-dark-border mt-8 pt-8 transition-colors duration-300">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center mb-3 md:mb-0">
-              <img src="/lovable-uploads/3791d944-90f4-4c34-af49-148382748d08.png" alt="GeM Logo" className="h-10 mr-4 filter dark:brightness-90" />
-              <img src="/lovable-uploads/2dbd5ae0-18b5-412c-bb9b-e7aadc945e16.png" alt="Make in India Logo" className="h-10 filter dark:brightness-90" />
+            <div className="flex items-center mb-4 md:mb-0">
+              <img src="/lovable-uploads/3791d944-90f4-4c34-af49-148382748d08.png" alt="GeM Logo" className="h-8 mr-4 filter dark:brightness-90" />
+              <img src="/lovable-uploads/2dbd5ae0-18b5-412c-bb9b-e7aadc945e16.png" alt="Make in India Logo" className="h-8 filter dark:brightness-90" />
             </div>
-            <p className="text-gray-300 dark:text-dark-text-secondary transition-colors duration-300">&copy; {new Date().getFullYear()} Virgir Ventures and Enterprises Pvt. Ltd. All rights reserved.</p>
+            <p className="text-gray-300 dark:text-dark-text-secondary text-center md:text-left transition-colors duration-300">
+              &copy; {new Date().getFullYear()} Virgir Ventures and Enterprises Pvt. Ltd. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

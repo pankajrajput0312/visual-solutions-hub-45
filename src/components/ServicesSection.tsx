@@ -1,12 +1,39 @@
 import React from 'react';
+import { Package2, Lock, HardHat, Settings, MonitorPlay, Handshake } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 
-export type ServiceType = {
+interface ServiceType {
   id: number;
   title: string;
   description: string;
   icon: string;
   category: string;
+}
+
+// Helper function to get the correct icon
+const getIcon = (iconName: string) => {
+  switch (iconName) {
+    case 'network': return <Package2 className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'security': return <Lock className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'hardware': return <HardHat className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'software': return <Settings className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'audiovisual': return <MonitorPlay className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'government': return <Handshake className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    default: return null;
+  }
+};
+
+// Helper function to get the correct image URL (replace with your actual image paths)
+const getImageUrl = (category: string) => {
+  switch (category) {
+    case 'it': return '/services/it.jpg';
+    case 'security': return '/services/security.jpg';
+    case 'hardware': return '/services/hardware.jpg';
+    case 'software': return '/services/software.jpg';
+    case 'av': return '/services/audiovisual.jpg';
+    case 'gem': return '/services/government.jpg';
+    default: return '/services/default.jpg';
+  }
 };
 
 const services: ServiceType[] = [
@@ -79,7 +106,7 @@ const ServicesSection: React.FC = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-md capitalize transition-all duration-300 ${
                 activeCategory === category 
-                  ? 'bg-brand-teal dark:bg-dark-accent text-white shadow-lg' 
+                  ? 'bg-brand-navy hover:bg-brand-blue dark:bg-dark-accent dark:hover:bg-dark-accent-hover text-white shadow-lg' 
                   : 'bg-white dark:bg-dark-card text-brand-gray dark:text-dark-text-secondary hover:bg-brand-blue dark:hover:bg-dark-accent hover:text-white border border-gray-200 dark:border-dark-border'
               }`}
             >

@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Mail, Phone, ArrowRight, Globe, Instagram } from 'lucide-react';
+import { Mail, Phone, ArrowRight, Globe, Instagram, MessageCircle } from 'lucide-react';
 import { useToast } from "../hooks/use-toast";
 
 const ContactSection: React.FC = () => {
@@ -94,14 +93,31 @@ const ContactSection: React.FC = () => {
                   <span className="text-white/90 dark:text-white transition-colors duration-300">@virgir</span>
                 </div>
               </div>
+              
+              {/* WhatsApp Contact */}
+              <div>
+                <div className="flex items-center mb-2">
+                  <MessageCircle className="mr-4 h-6 w-6 text-brand-teal dark:text-white flex-shrink-0 transition-colors duration-300" />
+                  <h3 className="font-medium text-xl">WhatsApp</h3>
+                </div>
+                <div className="flex flex-col items-start ml-10">
+                  <a 
+                    href="https://wa.me/919910467633?text=Hi%20team%2C%20I%20have%20a%20question%20about%20your%20services." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-medium rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl mb-4"
+                  >
+                    Message Us on WhatsApp
+                  </a>
+                  <img
+                    src="/Contact-us.png"
+                    alt="WhatsApp QR Code"
+                    className="w-32 h-32 bg-white p-1 rounded-lg shadow-md"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="flex justify-center lg:justify-start">
-              <img
-                src="/Contact-us.png"
-                alt="Virgir Social QR Code"
-                className="bg-white p-2 rounded-lg shadow max-w-[160px] w-full h-auto"
-              />
-            </div>
+            
           </div>
           
           <div className="bg-white dark:bg-dark-card text-brand-navy dark:text-white p-6 rounded-lg shadow-lg dark:shadow-xl border border-gray-100 dark:border-dark-border transition-colors duration-300">
