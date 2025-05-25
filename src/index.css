@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -30,21 +31,21 @@
 
   .dark {
     --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --foreground: 0 0% 100%;
     --card: 222 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card-foreground: 0 0% 100%;
     --popover: 222 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover-foreground: 0 0% 100%;
     --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222 84% 4.9%;
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
     --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 94.1%;
@@ -55,7 +56,7 @@
   }
 
   .dark body {
-    @apply bg-dark-bg text-dark-text;
+    @apply bg-dark-bg text-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -69,7 +70,7 @@
   }
   
   .dark .btn-primary {
-    @apply bg-dark-accent text-white hover:bg-blue-600;
+    @apply bg-brand-blue text-white hover:bg-blue-600;
   }
   
   .btn-secondary {
@@ -85,7 +86,7 @@
   }
   
   .dark .premium-btn-primary {
-    @apply bg-dark-accent text-white hover:bg-blue-600;
+    @apply bg-brand-blue text-white hover:bg-blue-600;
   }
   
   .premium-btn-secondary {
@@ -101,7 +102,7 @@
   }
   
   .dark .section-title {
-    @apply text-dark-text;
+    @apply text-white;
   }
   
   .subsection-title {
@@ -109,7 +110,7 @@
   }
 
   .dark .subsection-title {
-    @apply text-dark-accent;
+    @apply text-white;
   }
 
   .card {
@@ -125,7 +126,7 @@
   }
 
   .dark .nav-link {
-    @apply text-dark-text-secondary hover:text-dark-accent;
+    @apply text-white hover:text-gray-300;
   }
 
   .nav-link-mobile {
@@ -133,7 +134,7 @@
   }
 
   .dark .nav-link-mobile {
-    @apply hover:bg-dark-surface text-dark-text-secondary hover:text-dark-accent;
+    @apply hover:bg-dark-surface text-white hover:text-gray-300;
   }
 
   .service-row {
