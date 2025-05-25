@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ServiceType } from './ServicesSection';
 import { Monitor, Shield, HardDrive, FileText, Video, Briefcase } from 'lucide-react';
@@ -58,15 +57,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isEven }) => {
       </div>
       
       {/* Content Section - Right side (or left if even) */}
-      <div className="p-8 md:w-3/5">
+      <div className="p-8 md:w-3/5 pb-6">
         <div className="mb-4 bg-brand-light inline-block p-3 rounded-lg">
           {getIcon(service.icon)}
         </div>
         <h3 className="subsection-title">{service.title}</h3>
-        <p className="text-brand-gray mb-4">{service.description}</p>
-        <a href="#contact" className="inline-flex items-center text-brand-blue font-medium hover:text-brand-navy transition-colors">
-          Get Details <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </a>
+        <p className="text-brand-gray mb-6">{service.description}</p>
+        
+        {/* Key Partners Section */}
+        <div className="mt-auto pt-4 border-t border-gray-100">
+          <h4 className="text-sm font-semibold text-brand-navy mb-3 uppercase">Key Partners</h4>
+          <div className="flex items-center gap-6">
+            <img src="/partners/hp.png" alt="HP Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-110" />
+            <img src="/partners/Samsung_Logo.svg" alt="Samsung Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-110" />
+          </div>
+        </div>
+        
       </div>
     </div>
   );
