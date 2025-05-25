@@ -38,7 +38,6 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#" className="nav-link font-medium">Home</a>
-            <a href="#products" className="nav-link font-medium">Products</a>
             <a href="#services" className="nav-link font-medium">Services</a>
             <Link to="/blog" className="nav-link font-medium">Blog</Link>
             <a href="#contact" className="btn-primary">Contact Us</a>
@@ -65,9 +64,6 @@ const Header: React.FC = () => {
           <nav className="flex flex-col py-2">
             <a href="#" className="nav-link-mobile" onClick={toggleMobileMenu}>
               Home
-            </a>
-            <a href="#products" className="nav-link-mobile" onClick={toggleMobileMenu}>
-              Products
             </a>
             <a href="#services" className="nav-link-mobile" onClick={toggleMobileMenu}>
               Services

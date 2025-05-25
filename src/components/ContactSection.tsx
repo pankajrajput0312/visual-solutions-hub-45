@@ -94,7 +94,7 @@ const ContactSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center lg:justify-start mt-8">
+            <div className="flex justify-center lg:justify-start">
               <img
                 src="/Contact-us.png"
                 alt="Virgir Social QR Code"

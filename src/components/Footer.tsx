@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Globe, MapPin, Phone, Mail } from 'lucide-react';
@@ -70,18 +69,6 @@ const Footer: React.FC = () => {
                 <Globe size={20} className="mr-2 text-brand-maroon flex-shrink-0" />
                 <a href="http://www.virgir.in" target="_blank" rel="noopener noreferrer" className="hover:text-brand-maroon">www.virgir.in</a>
               </li>
-            </ul>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Products</h3>
-            <ul className="space-y-2">
-              <li><a href="#products" className="text-gray-300 hover:text-brand-maroon transition-colors">Video Conferencing</a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-brand-maroon transition-colors">LED Walls</a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-brand-maroon transition-colors">Smart Classrooms</a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-brand-maroon transition-colors">VR Labs</a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-brand-maroon transition-colors">Modular Furnishing</a></li>
             </ul>
           </div>
 
