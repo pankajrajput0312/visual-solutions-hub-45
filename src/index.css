@@ -6,39 +6,56 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* Light background */
-    --foreground: 222 47% 11%; /* Dark text */
-
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-
-    --primary: 214 60% 21%; /* Dark blue */
+    --primary: 214 60% 21%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 347 65% 33%; /* Maroon */
+    --secondary: 347 65% 33%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 201 58% 38%;
     --accent-foreground: 222 47% 11%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 214 60% 21%;
-
     --radius: 0.5rem;
   }
 
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -48,49 +65,91 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-blue text-white hover:bg-brand-navy transition-colors duration-300 px-6 py-3 rounded-md font-medium;
+    @apply bg-brand-blue text-white hover:bg-brand-navy transition-all duration-300 px-6 py-3 rounded-md font-medium shadow-lg hover:shadow-xl;
+  }
+  
+  .dark .btn-primary {
+    @apply bg-dark-accent text-white hover:bg-blue-600;
   }
   
   .btn-secondary {
-    @apply bg-brand-maroon text-white hover:bg-brand-blue transition-colors duration-300 px-6 py-3 rounded-md font-medium;
+    @apply bg-brand-maroon text-white hover:bg-brand-blue transition-all duration-300 px-6 py-3 rounded-md font-medium shadow-lg hover:shadow-xl;
   }
   
-  /* Premium buttons with shadow and subtle hover effect */
+  .dark .btn-secondary {
+    @apply bg-brand-maroon text-white hover:bg-red-600;
+  }
+
   .premium-btn-primary {
     @apply bg-brand-blue text-white hover:bg-brand-navy transition-all duration-300 px-7 py-3.5 rounded-md font-medium shadow-lg hover:shadow-xl hover:translate-y-[-2px];
+  }
+  
+  .dark .premium-btn-primary {
+    @apply bg-dark-accent text-white hover:bg-blue-600;
   }
   
   .premium-btn-secondary {
     @apply bg-brand-maroon text-white hover:bg-opacity-90 transition-all duration-300 px-7 py-3.5 rounded-md font-medium shadow-lg hover:shadow-xl hover:translate-y-[-2px];
   }
 
+  .dark .premium-btn-secondary {
+    @apply bg-brand-maroon text-white hover:bg-red-600;
+  }
+
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-brand-navy mb-4;
+    @apply text-3xl md:text-4xl font-bold text-brand-navy mb-4 transition-colors duration-300;
+  }
+  
+  .dark .section-title {
+    @apply text-dark-text;
   }
   
   .subsection-title {
-    @apply text-2xl font-bold text-brand-blue mb-3;
+    @apply text-2xl font-bold text-brand-blue mb-3 transition-colors duration-300;
+  }
+
+  .dark .subsection-title {
+    @apply text-dark-accent;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg;
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100;
+  }
+
+  .dark .card {
+    @apply bg-dark-card shadow-xl border-dark-border hover:shadow-2xl;
   }
 
   .nav-link {
-    @apply text-brand-gray hover:text-brand-blue transition-colors duration-200;
+    @apply text-brand-gray hover:text-brand-blue transition-colors duration-300;
+  }
+
+  .dark .nav-link {
+    @apply text-dark-text-secondary hover:text-dark-accent;
   }
 
   .nav-link-mobile {
-    @apply block py-2 hover:bg-brand-light px-4 text-brand-gray hover:text-brand-blue;
+    @apply block py-2 hover:bg-brand-light px-4 text-brand-gray hover:text-brand-blue transition-colors duration-300;
+  }
+
+  .dark .nav-link-mobile {
+    @apply hover:bg-dark-surface text-dark-text-secondary hover:text-dark-accent;
+  }
+
+  .service-row {
+    @apply flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl mb-8 border border-gray-100;
   }
   
-  /* Service section styles */
-  .service-row {
-    @apply flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl mb-8;
+  .dark .service-row {
+    @apply bg-dark-card shadow-xl border-dark-border hover:shadow-2xl;
   }
   
   .service-row-reverse {
-    @apply flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl mb-8;
+    @apply flex flex-col md:flex-row-reverse bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl mb-8 border border-gray-100;
+  }
+
+  .dark .service-row-reverse {
+    @apply bg-dark-card shadow-xl border-dark-border hover:shadow-2xl;
   }
 }
 
@@ -114,7 +173,6 @@
   z-index: -1;
 }
 
-/* Premium overlay with improved gradient for better text visibility */
 .premium-overlay {
   position: absolute;
   top: 0;
@@ -125,7 +183,10 @@
   z-index: -1;
 }
 
-/* Original overlay preserved for other components */
+.dark .premium-overlay {
+  background: linear-gradient(135deg, rgba(15, 20, 25, 0.9) 0%, rgba(26, 31, 46, 0.85) 100%);
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -134,6 +195,10 @@
   height: 100%;
   background: linear-gradient(rgba(10, 29, 48, 0.8), rgba(139, 30, 50, 0.7));
   z-index: -1;
+}
+
+.dark .overlay {
+  background: linear-gradient(rgba(15, 20, 25, 0.85), rgba(26, 31, 46, 0.8));
 }
 
 .diagonal-border {

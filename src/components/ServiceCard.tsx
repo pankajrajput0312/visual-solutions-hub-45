@@ -9,21 +9,22 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, isEven }) => {
   const getIcon = (iconName: string) => {
+    const iconClass = "h-10 w-10 text-brand-blue dark:text-dark-accent transition-colors duration-300";
     switch (iconName) {
       case 'network':
-        return <Monitor className="h-10 w-10 text-brand-blue" />;
+        return <Monitor className={iconClass} />;
       case 'security':
-        return <Shield className="h-10 w-10 text-brand-blue" />;
+        return <Shield className={iconClass} />;
       case 'hardware':
-        return <HardDrive className="h-10 w-10 text-brand-blue" />;
+        return <HardDrive className={iconClass} />;
       case 'software':
-        return <FileText className="h-10 w-10 text-brand-blue" />;
+        return <FileText className={iconClass} />;
       case 'audiovisual':
-        return <Video className="h-10 w-10 text-brand-blue" />;
+        return <Video className={iconClass} />;
       case 'government':
-        return <Briefcase className="h-10 w-10 text-brand-blue" />;
+        return <Briefcase className={iconClass} />;
       default:
-        return <Monitor className="h-10 w-10 text-brand-blue" />;
+        return <Monitor className={iconClass} />;
     }
   };
 
@@ -46,8 +47,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isEven }) => {
   };
 
   return (
-    <div className={`flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg mb-8 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-      {/* Image Section - Left side (or right if even) */}
+    <div className={`flex flex-col md:flex-row items-center bg-white dark:bg-dark-card rounded-lg shadow-md dark:shadow-xl overflow-hidden transition-all duration-300 hover:shadow-lg dark:hover:shadow-2xl mb-8 border border-gray-100 dark:border-dark-border ${isEven ? 'md:flex-row-reverse' : ''}`}>
+      {/* Image Section */}
       <div className="md:w-2/5 h-64 md:h-auto">
         <img 
           src={getImageUrl(service.category)} 
@@ -56,23 +57,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isEven }) => {
         />
       </div>
       
-      {/* Content Section - Right side (or left if even) */}
+      {/* Content Section */}
       <div className="p-8 md:w-3/5 pb-6">
-        <div className="mb-4 bg-brand-light inline-block p-3 rounded-lg">
+        <div className="mb-4 bg-brand-light dark:bg-dark-surface inline-block p-3 rounded-lg transition-colors duration-300">
           {getIcon(service.icon)}
         </div>
         <h3 className="subsection-title">{service.title}</h3>
-        <p className="text-brand-gray mb-6">{service.description}</p>
+        <p className="text-brand-gray dark:text-dark-text-secondary mb-6 transition-colors duration-300">{service.description}</p>
         
         {/* Key Partners Section */}
-        <div className="mt-auto pt-4 border-t border-gray-100">
-          <h4 className="text-sm font-semibold text-brand-navy mb-3 uppercase">Key Partners</h4>
+        <div className="mt-auto pt-4 border-t border-gray-100 dark:border-dark-border transition-colors duration-300">
+          <h4 className="text-sm font-semibold text-brand-navy dark:text-dark-text mb-3 uppercase transition-colors duration-300">Key Partners</h4>
           <div className="flex items-center gap-6">
-            <img src="/partners/hp.png" alt="HP Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-110" />
-            <img src="/partners/Samsung_Logo.svg" alt="Samsung Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-110" />
+            <img src="/partners/hp.png" alt="HP Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-110 filter dark:brightness-90" />
+            <img src="/partners/Samsung_Logo.svg" alt="Samsung Logo" className="h-12 object-contain transition-transform duration-300 hover:scale-110 filter dark:brightness-90" />
           </div>
         </div>
-        
       </div>
     </div>
   );

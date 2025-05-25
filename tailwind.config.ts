@@ -67,14 +67,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated colors from business card
-				'brand-blue': '#0F375A', // Dark blue from card
-				'brand-maroon': '#8B1E32', // Maroon/burgundy from card
-				'brand-navy': '#0A1D30', // Darker navy
-				'brand-light': '#F5F7FA', // Light background
-				'brand-gray': '#4A5568', // Text gray
-				'brand-teal': '#2B7698', // Teal accent from logo
-				'brand-orange': '#FF8A00', // Orange from #startupindia logo
+				// Updated colors from business card with dark mode support
+				'brand-blue': '#0F375A',
+				'brand-maroon': '#8B1E32',
+				'brand-navy': '#0A1D30',
+				'brand-light': '#F5F7FA',
+				'brand-gray': '#4A5568',
+				'brand-teal': '#2B7698',
+				'brand-orange': '#FF8A00',
+				// Dark theme colors
+				'dark-bg': '#0F1419',
+				'dark-surface': '#1A1F2E',
+				'dark-card': '#252A3A',
+				'dark-border': '#3A3F4F',
+				'dark-text': '#E2E8F0',
+				'dark-text-secondary': '#94A3B8',
+				'dark-accent': '#3B82F6',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

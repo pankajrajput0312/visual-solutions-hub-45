@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ServiceCard from './ServiceCard';
 
@@ -65,10 +64,10 @@ const ServicesSection: React.FC = () => {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <section id="services" className="py-16 bg-brand-light">
+    <section id="services" className="py-16 bg-brand-light dark:bg-dark-surface transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title text-center">Our Services</h2>
-        <p className="text-lg text-center text-brand-gray mb-8 max-w-3xl mx-auto">
+        <p className="text-lg text-center text-brand-gray dark:text-dark-text-secondary mb-8 max-w-3xl mx-auto transition-colors duration-300">
           We provide a wide range of professional services to help your organization implement and maintain cutting-edge technology solutions.
         </p>
         
@@ -78,10 +77,10 @@ const ServicesSection: React.FC = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-md capitalize transition-colors ${
+              className={`px-4 py-2 rounded-md capitalize transition-all duration-300 ${
                 activeCategory === category 
-                  ? 'bg-brand-teal text-white' 
-                  : 'bg-white text-brand-gray hover:bg-brand-blue hover:text-white'
+                  ? 'bg-brand-teal dark:bg-dark-accent text-white shadow-lg' 
+                  : 'bg-white dark:bg-dark-card text-brand-gray dark:text-dark-text-secondary hover:bg-brand-blue dark:hover:bg-dark-accent hover:text-white border border-gray-200 dark:border-dark-border'
               }`}
             >
               {category}
@@ -89,7 +88,7 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
         
-        {/* Services List - now as vertical columns */}
+        {/* Services List */}
         <div className="flex flex-col gap-6">
           {filteredServices.map((service, index) => (
             <ServiceCard key={service.id} service={service} isEven={index % 2 === 1} />
