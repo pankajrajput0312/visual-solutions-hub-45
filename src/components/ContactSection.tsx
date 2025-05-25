@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, Phone, ArrowRight, Globe, Instagram } from 'lucide-react';
 import { useToast } from "../hooks/use-toast";
@@ -45,52 +46,52 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-gradient-to-br from-brand-blue to-brand-navy text-white">
+    <section id="contact" className="py-16 bg-gradient-to-br from-brand-blue to-brand-navy dark:from-dark-bg dark:to-dark-surface text-white dark:text-dark-text transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Get In Touch</h2>
-            <p className="text-lg mb-8 text-white/90">
+            <p className="text-lg mb-8 text-white/90 dark:text-dark-text-secondary transition-colors duration-300">
               Have questions about our products or services? Contact us today for a consultation or to request a quote.
             </p>
             
             <div className="space-y-6">
               <div className="flex items-start">
-                <Phone className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <Phone className="mr-4 h-6 w-6 text-brand-teal dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
                 <div>
                   <h3 className="font-medium text-xl">Phone</h3>
-                  <a href="tel:+919910467633" className="text-white/90 hover:text-white hover:underline transition-colors">
+                  <a href="tel:+919910467633" className="text-white/90 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-text hover:underline transition-colors">
                     +91 99104 67633
                   </a>
                   <span className="mx-2">||</span>
-                  <a href="tel:+917627050482" className="text-white/90 hover:text-white hover:underline transition-colors">
+                  <a href="tel:+917627050482" className="text-white/90 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-text hover:underline transition-colors">
                     +91 76270 50482
                   </a>
                 </div>
               </div>
               <div className="flex items-start">
-                <Mail className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <Mail className="mr-4 h-6 w-6 text-brand-teal dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
                 <div>
                   <h3 className="font-medium text-xl">Email</h3>
-                  <a href="mailto:virgirdtpl@gmail.com" className="text-white/90 hover:text-white hover:underline transition-colors">
+                  <a href="mailto:virgirdtpl@gmail.com" className="text-white/90 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-text hover:underline transition-colors">
                     virgirdtpl@gmail.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start">
-                <Globe className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <Globe className="mr-4 h-6 w-6 text-brand-teal dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
                 <div>
                   <h3 className="font-medium text-xl">Website</h3>
-                  <a href="https://www.virgir.in" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white hover:underline transition-colors">
+                  <a href="https://www.virgir.in" target="_blank" rel="noopener noreferrer" className="text-white/90 dark:text-dark-text-secondary hover:text-white dark:hover:text-dark-text hover:underline transition-colors">
                     www.virgir.in
                   </a>
                 </div>
               </div>
               <div className="flex items-start">
-                <Instagram className="mr-4 h-6 w-6 text-brand-teal flex-shrink-0" />
+                <Instagram className="mr-4 h-6 w-6 text-brand-teal dark:text-dark-accent flex-shrink-0 transition-colors duration-300" />
                 <div>
                   <h3 className="font-medium text-xl">Social Media</h3>
-                  <span className="text-white/90">@virgir</span>
+                  <span className="text-white/90 dark:text-dark-text-secondary transition-colors duration-300">@virgir</span>
                 </div>
               </div>
             </div>
@@ -103,7 +104,7 @@ const ContactSection: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-white text-brand-navy p-6 rounded-lg shadow-lg">
+          <div className="bg-white dark:bg-dark-card text-brand-navy dark:text-dark-text p-6 rounded-lg shadow-lg dark:shadow-xl border border-gray-100 dark:border-dark-border transition-colors duration-300">
             <h3 className="text-2xl font-bold mb-4">Send Us a Message</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
@@ -116,7 +117,7 @@ const ContactSection: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                  className="w-full p-3 rounded border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-surface text-brand-navy dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue dark:focus:ring-dark-accent transition-colors duration-300"
                   required
                 />
               </div>
@@ -131,7 +132,7 @@ const ContactSection: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                  className="w-full p-3 rounded border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-surface text-brand-navy dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue dark:focus:ring-dark-accent transition-colors duration-300"
                   required
                 />
               </div>
@@ -146,7 +147,7 @@ const ContactSection: React.FC = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                  className="w-full p-3 rounded border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-surface text-brand-navy dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue dark:focus:ring-dark-accent transition-colors duration-300"
                 />
               </div>
               
@@ -160,7 +161,7 @@ const ContactSection: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                  className="w-full p-3 rounded border border-gray-300 dark:border-dark-border bg-white dark:bg-dark-surface text-brand-navy dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-brand-blue dark:focus:ring-dark-accent transition-colors duration-300"
                   required
                 ></textarea>
               </div>

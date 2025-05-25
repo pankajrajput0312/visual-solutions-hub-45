@@ -78,7 +78,7 @@ const BlogList: React.FC = () => {
     : blogPosts.filter(post => post.category === activeCategory);
 
   return (
-    <section className="py-16 bg-brand-light">
+    <section className="py-16 bg-brand-light dark:bg-dark-bg transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
@@ -86,10 +86,10 @@ const BlogList: React.FC = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-md capitalize transition-colors ${
+              className={`px-4 py-2 rounded-md capitalize transition-colors duration-300 ${
                 activeCategory === category 
-                  ? 'bg-brand-blue text-white' 
-                  : 'bg-white text-brand-gray hover:bg-brand-teal hover:text-white'
+                  ? 'bg-brand-blue dark:bg-dark-accent text-white' 
+                  : 'bg-white dark:bg-dark-card text-brand-gray dark:text-dark-text-secondary hover:bg-brand-teal dark:hover:bg-dark-accent hover:text-white border border-gray-200 dark:border-dark-border'
               }`}
             >
               {category}
