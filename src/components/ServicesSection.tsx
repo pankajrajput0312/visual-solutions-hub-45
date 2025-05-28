@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Package2, Lock, HardHat, Settings, MonitorPlay, Handshake } from 'lucide-react';
 import ServiceCard from './ServiceCard';
@@ -14,12 +13,12 @@ interface ServiceType {
 // Helper function to get the correct icon
 const getIcon = (iconName: string) => {
   switch (iconName) {
-    case 'network': return <Package2 className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-300" />;
-    case 'security': return <Lock className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-300" />;
-    case 'hardware': return <HardHat className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-300" />;
-    case 'software': return <Settings className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-300" />;
-    case 'audiovisual': return <MonitorPlay className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-300" />;
-    case 'government': return <Handshake className="h-6 w-6 text-purple-600 dark:text-purple-400 transition-colors duration-300" />;
+    case 'network': return <Package2 className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'security': return <Lock className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'hardware': return <HardHat className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'software': return <Settings className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'audiovisual': return <MonitorPlay className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
+    case 'government': return <Handshake className="h-6 w-6 text-brand-navy dark:text-dark-text transition-colors duration-300" />;
     default: return null;
   }
 };
@@ -92,10 +91,10 @@ const ServicesSection: React.FC = () => {
     : services.filter(service => service.category === activeCategory);
 
   return (
-    <section id="services" className="py-16 bg-gradient-to-br from-purple-50/80 via-blue-50/60 to-indigo-100/80 dark:from-purple-950/80 dark:via-blue-950/60 dark:to-indigo-950/80 transition-colors duration-300">
+    <section id="services" className="py-16 bg-brand-light dark:bg-dark-surface transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="section-title text-center">Our Services</h2>
-        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto transition-colors duration-300">
+        <p className="text-lg text-center text-brand-gray dark:text-dark-text-secondary mb-8 max-w-3xl mx-auto transition-colors duration-300">
           We provide a wide range of professional services to help your organization implement and maintain cutting-edge technology solutions.
         </p>
         
@@ -105,10 +104,10 @@ const ServicesSection: React.FC = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-lg capitalize transition-all duration-300 backdrop-blur-sm ${
+              className={`px-4 py-2 rounded-md capitalize transition-all duration-300 ${
                 activeCategory === category 
-                  ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white shadow-lg border border-white/20' 
-                  : 'bg-white/60 dark:bg-gray-800/60 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-600 hover:text-white border border-white/20 dark:border-gray-700/30'
+                  ? 'bg-brand-navy hover:bg-brand-blue dark:bg-dark-accent dark:hover:bg-dark-accent-hover text-white shadow-lg' 
+                  : 'bg-white dark:bg-dark-card text-brand-gray dark:text-dark-text-secondary hover:bg-brand-blue dark:hover:bg-dark-accent hover:text-white border border-gray-200 dark:border-dark-border'
               }`}
             >
               {category}
